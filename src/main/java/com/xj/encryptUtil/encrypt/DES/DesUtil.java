@@ -38,8 +38,4 @@ public class DesUtil {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        String key = createKey();
-        System.out.printf(key);
-    }
 }
