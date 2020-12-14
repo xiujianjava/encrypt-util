@@ -25,7 +25,7 @@ public class TripleDES {
         return cipher.doFinal(src);
     }
 
-    public byte[] decryption(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+    public static byte[] decryption(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         Cipher cipher = getTripleDES(Cipher.DECRYPT_MODE, key);
         return cipher.doFinal(src);
     }
