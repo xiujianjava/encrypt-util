@@ -19,75 +19,25 @@ import java.security.spec.InvalidKeySpecException;
  */
 public class Des {
     private static Logger logger = LoggerFactory.getLogger(Des.class);
-    private static final String ALGORITHM = "DES";
-    private static final String CIPHER_ALGORITHM_NOPADDING = "DES/CBC/NoPadding";
 
     public static byte[] encryption(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
-        Cipher cipher = null;
-        try {
-            cipher = getDesCipher(Cipher.ENCRYPT_MODE, key);
-            return cipher.doFinal(src);
-        } catch (InvalidKeySpecException e) {
-            throw e;
-        } catch (NoSuchAlgorithmException e) {
-            throw e;
-        } catch (NoSuchPaddingException e) {
-            throw e;
-        } catch (InvalidKeyException e) {
-            throw e;
-        } catch (BadPaddingException e) {
-            throw e;
-        } catch (IllegalBlockSizeException e) {
-            throw e;
-        }
+        Cipher cipher = getDesCipher(Cipher.ENCRYPT_MODE, key);
+        return cipher.doFinal(src);
+
     }
 
     public byte[] decryption(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
-        Cipher cipher = null;
-        try {
-            cipher = getDesCipher(Cipher.DECRYPT_MODE, key);
-            return cipher.doFinal(src);
-        } catch (InvalidKeySpecException e) {
-            throw e;
-        } catch (NoSuchAlgorithmException e) {
-            throw e;
-        } catch (NoSuchPaddingException e) {
-            throw e;
-        } catch (InvalidKeyException e) {
-            throw e;
-        } catch (BadPaddingException e) {
-            throw e;
-        } catch (IllegalBlockSizeException e) {
-            throw e;
-        }
+        Cipher cipher = getDesCipher(Cipher.DECRYPT_MODE, key);
+        return cipher.doFinal(src);
     }
 
     private static Cipher getDesCipher(int type, byte[] key) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
         SecureRandom secureRandom = new SecureRandom();
-        try {
-            DESKeySpec desKeySpec = new DESKeySpec(key);
-            SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DesConst.ALGORITHM_DES);
-            SecretKey secretKey = keyFactory.generateSecret(desKeySpec);
-            Cipher cipher = Cipher.getInstance(DesConst.CIPHER_ALGORITHM_DES);
-            cipher.init(type, secretKey, secureRandom);
-            return cipher;
-        } catch (InvalidKeyException e) {
-            throw e;
-        } catch (NoSuchPaddingException e) {
-            throw e;
-        } catch (NoSuchAlgorithmException e) {
-            throw e;
-        } catch (InvalidKeySpecException e) {
-            throw e;
-        }
-    }
-
-
-    public static void main(String[] args) {
-        try {
-            Des.encryption(new byte[8], new byte[2]);
-        } catch (Exception e) {
-
-        }
+        DESKeySpec desKeySpec = new DESKeySpec(key);
+        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DesConst.ALGORITHM_DES);
+        SecretKey secretKey = keyFactory.generateSecret(desKeySpec);
+        Cipher cipher = Cipher.getInstance(DesConst.CIPHER_ALGORITHM_DES);
+        cipher.init(type, secretKey, secureRandom);
+        return cipher;
     }
 }

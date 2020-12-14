@@ -13,10 +13,11 @@ import javax.crypto.SecretKey;
  * @Date 2020/12/11 4:57 下午
  * @Version 1.0
  */
-public class KeyUtil {
+public class DesUtil {
     private static final String ALGORITHM = "DES";
+
     //生成一个DES密钥
-    public static String createKey(){
+    public static String createKey() {
         try {
             KeyGenerator keyGenerator = KeyGenerator.getInstance(ALGORITHM);
             keyGenerator.init(56);//des 7位*8字节  3des 双倍
