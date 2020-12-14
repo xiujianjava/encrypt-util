@@ -9,6 +9,8 @@
 package com.xj.encryptUtil.encrypt.DES.DES;
 
 class DesConst {
+    /** 指定算法 */
     static final String ALGORITHM_DES = "DES";
+    //
     static final String CIPHER_ALGORITHM_DES = "DES/CBC/NoPadding";
 }

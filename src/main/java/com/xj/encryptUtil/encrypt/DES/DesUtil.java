@@ -1,7 +1,8 @@
 package com.xj.encryptUtil.encrypt.DES;
 
 import com.xj.encryptUtil.util.CodeUtl;
-import org.apache.commons.codec.binary.Hex;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
@@ -14,6 +15,8 @@ import javax.crypto.SecretKey;
  * @Version 1.0
  */
 public class DesUtil {
+    private static Logger logger = LoggerFactory.getLogger(DesUtil.class);
+
     private static final String ALGORITHM = "DES";
 
     //生成一个DES密钥

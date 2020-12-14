@@ -11,22 +11,21 @@ import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 
 /**
- * @ClassName Des
- * @Description Des加解密工具
+ * @ClassName DES
+ * @Description DES加解密工具
  * @Autohr xj
  * @Date 2020/12/11 2:29 下午
- * @Version 1.0
  */
-public class Des {
-    private static Logger logger = LoggerFactory.getLogger(Des.class);
+public class DES {
+    private static Logger logger = LoggerFactory.getLogger(DES.class);
 
-    public static byte[] encryption(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+    public static byte[] encrypt(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         Cipher cipher = getDesCipher(Cipher.ENCRYPT_MODE, key);
         return cipher.doFinal(src);
 
     }
 
-    public static byte[] decryption(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+    public static byte[] decrypt(byte[] key, byte[] src) throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         Cipher cipher = getDesCipher(Cipher.DECRYPT_MODE, key);
         return cipher.doFinal(src);
     }
