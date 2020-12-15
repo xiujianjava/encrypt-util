@@ -17,7 +17,7 @@ class RSAConst {
     static final String ALGORITHM = "RSA";
     //
     static final String CIPHER_ALGORITHM = "RSA/ECB/PKCS1Padding";
-    static final String CHARSET = "UTF-8";
+    static final String CHARSET = "GBK";
     static final int RESERVESIZE = 11;
     static final String SIGNATURE = "SHA1withRSA";
 }

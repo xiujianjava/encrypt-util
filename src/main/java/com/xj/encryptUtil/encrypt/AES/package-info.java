@@ -32,5 +32,5 @@ class AesConst {
     static final String ALGORITHM_AES = "AES";
     //
     static final String CIPHER_ALGORITHM_AES = "AES/ECB/PKCS5Padding";
-    static final String CHARSET = "UTF-8";
+    static final String CHARSET = "GBK";
 }

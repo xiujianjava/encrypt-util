@@ -28,7 +28,7 @@ public class RSASignature {
      * @throws NoSuchAlgorithmException
      * @throws InvalidKeySpecException
      * @throws SignatureException
-     * @Date 2020/12/14 6:07 下午
+     * @Date 2020/12/14 9:48 上午
      * @author: xj
      */
     public static byte[] signature(PrivateKey privateKey, byte[] src) throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, SignatureException {
