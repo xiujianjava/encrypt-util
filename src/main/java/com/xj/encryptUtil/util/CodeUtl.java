@@ -7,7 +7,8 @@ package com.xj.encryptUtil.util;
  * @Date 2020/12/11 5:06 下午
  * @Version 1.0
  */
-public class CodeUtl {
+public class
+CodeUtl {
     public static String byteArray2HexStr(byte[] b) {
         StringBuffer hexStr = new StringBuffer();
         String stmp = "";
