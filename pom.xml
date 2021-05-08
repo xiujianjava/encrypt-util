@@ -68,6 +68,19 @@
 
 
     </dependencies>
+    <!--  发布到指定仓库，一般为自建nexus  -->
+        <distributionManagement>
+            <!--        release正式仓库则是用来保存稳定的发行版本-->
+            <repository>
+                <id>my-deploy-release</id>
+                <url>http://192.168.1.200:8081/repository/maven-releases/</url>
+            </repository>
+            <!--        snapshot快照仓库用于保存开发过程中的不稳定版本 根据version的后缀-SNAPSHOT 发布到快照库，否则则发布到发行库-->
+            <snapshotRepository>
+                <id>my-deploy-snapshot</id>
+                <url>http://192.168.1.200:8081/repository/maven-snapshots/</url>
+            </snapshotRepository>
+        </distributionManagement>
 <!--    <build>-->
 <!--        <plugins>-->
 <!--            <plugin>-->
