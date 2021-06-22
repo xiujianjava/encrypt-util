@@ -2,8 +2,6 @@ package com.xj.encryptUtil.encrypt.SHA;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

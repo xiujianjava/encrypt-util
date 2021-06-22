@@ -7,8 +7,8 @@ package com.xj.encryptUtil.encrypt.SHA;
  * @Date 2020/12/15 10:30 上午
  */
 public class A {
-    public static void main(String[] args) {
-        String a=SHA.md2Hex("123");
-        System.out.println(a);
-    }
+//    public static void main(String[] args) {
+//        String a=SHA.md2Hex("123");
+//        System.out.println(a);
+//    }
 }
